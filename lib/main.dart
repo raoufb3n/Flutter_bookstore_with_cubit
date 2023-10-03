@@ -1,4 +1,4 @@
-import 'package:bookapp/presentation/view_model/views/SplashView.dart';
+import 'package:bookapp/features/splash/presentation/views/SplashView.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Color(0xff202040),

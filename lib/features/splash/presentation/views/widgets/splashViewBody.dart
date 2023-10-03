@@ -1,4 +1,6 @@
+import 'package:bookapp/features/home/presentation/views/homeView.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -15,13 +17,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-    animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 1));
-    slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
-            .animate(animationController);
-    animationController.forward();
+    initSlidingAnimation();
+    NavgateToHome();
   }
+
+
 
   @override
   void dispose() {
@@ -45,5 +45,18 @@ class _SplashViewBodyState extends State<SplashViewBody>
             }),
       ],
     );
+  }
+    void NavgateToHome() {
+    Future.delayed(Duration(seconds: 3),()=>Get.to(()=>HomeView(),
+    transition: Transition.rightToLeft,
+    duration: Duration(seconds: 2)));
+  }
+  void initSlidingAnimation() {
+    animationController =
+        AnimationController(vsync: this, duration: Duration(seconds: 1));
+    slidingAnimation =
+        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
+            .animate(animationController);
+    animationController.forward();
   }
 }
