@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color(0xff202040),
         primaryColor:Color(0xffB030B0),
         primaryColorDark: Color(0xff202060),
-        textTheme: TextTheme(
+        textTheme:const TextTheme(
           displayLarge: TextStyle(
             fontFamily: 'Poppins',
             fontSize: 24,
