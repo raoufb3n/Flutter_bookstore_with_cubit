@@ -16,6 +16,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         child: Column(
           children: [
             CostumAppBar(),
+              CustomListViewItem(),
           ],
         ),
       ),
@@ -56,6 +57,21 @@ class CostumAppBar extends StatelessWidget {
               )),
         ],
       ),
+    );
+  }
+}
+
+class CustomListViewItem extends StatelessWidget {
+  const CustomListViewItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 131,
+      height: MediaQuery.of(context).size.height * .25,
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/images/BookCover.png'))),
     );
   }
 }
