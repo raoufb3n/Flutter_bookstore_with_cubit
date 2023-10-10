@@ -17,35 +17,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color(0xff202040),
         primaryColor:Color(0xffB030B0),
         primaryColorDark: Color(0xff202060),
-        textTheme:const TextTheme(
-          displayLarge: TextStyle(
-            fontFamily: 'Poppins',
-            fontSize: 24,
-            fontWeight: FontWeight.w700
-          ),
-          titleLarge: TextStyle(
-            fontFamily: 'Poppins',
-            fontSize: 16,
-            fontWeight: FontWeight.w700
-          ),
-          titleMedium: TextStyle(
-            fontFamily: 'Poppins',
-            fontSize: 14,
-            fontWeight: FontWeight.w500           
-          ),          
-          titleSmall: TextStyle(
-            fontFamily: 'Poppins',
-            fontSize: 12,
-            fontWeight: FontWeight.w500           
-          ),
-          bodyMedium: TextStyle(
-            fontFamily: 'Poppins',
-            fontSize: 14,
-                         
-          )
-          
 
-        )
       ),
       home:const SplashView(),
     );

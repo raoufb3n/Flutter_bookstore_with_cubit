@@ -1,5 +1,6 @@
-import 'package:bookapp/features/home/presentation/views/widgets/costumListViewItem.dart';
+import 'package:bookapp/core/utils/styles.dart';
 import 'package:bookapp/features/home/presentation/views/widgets/customAppBar.dart';
+import 'package:bookapp/features/home/presentation/views/widgets/featuredListView.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatefulWidget {
@@ -17,30 +18,21 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CostumAppBar(),
               FeaturedBokksListView(),
+              const SizedBox(
+                height: 32,
+              ),
+              Text(
+                'Newest:',
+                style: Styles.displayLarge,
+              )
             ],
           ),
         ),
       ),
     );
-  }
-}
-
-class FeaturedBokksListView extends StatelessWidget {
-  const FeaturedBokksListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-        height: MediaQuery.of(context).size.height * .3,
-        child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) => Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                  child: CustomListViewItem(),
-                )));
   }
 }
