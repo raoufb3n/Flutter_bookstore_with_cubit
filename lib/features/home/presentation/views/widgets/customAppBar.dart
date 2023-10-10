@@ -1,3 +1,4 @@
+import 'package:bookapp/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
@@ -17,11 +18,11 @@ class CostumAppBar extends StatelessWidget {
                 height: 40,
               ),
               const SizedBox(
-                width: 4,
+                width: 6,
               ),
               Text(
                 'Book Store',
-                style: TextTheme().displayLarge,
+                style: Styles.bodyLarge,
               )
             ],
           ),
