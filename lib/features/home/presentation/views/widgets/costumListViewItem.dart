@@ -5,9 +5,7 @@ class CustomListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * .3,
-      child: AspectRatio(
+    return  AspectRatio(
         aspectRatio: 2.8 / 4,
         child: Container(
           decoration: BoxDecoration(
@@ -17,7 +15,7 @@ class CustomListViewItem extends StatelessWidget {
                   fit: BoxFit.fill,
                   image: AssetImage('assets/images/BookCover.png'))),
         ),
-      ),
-    );
+      )
+    ;
   }
 }
