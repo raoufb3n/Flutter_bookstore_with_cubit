@@ -1,3 +1,5 @@
+import 'package:bookapp/features/home/presentation/views/widgets/costumListViewItem.dart';
+import 'package:bookapp/features/home/presentation/views/widgets/customAppBar.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
@@ -16,7 +18,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         child: Column(
           children: [
             CostumAppBar(),
-              CustomListViewItem(),
+            CustomListViewItem(),
           ],
         ),
       ),
@@ -24,54 +26,6 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   }
 }
 
-class CostumAppBar extends StatelessWidget {
-  CostumAppBar({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-      child: Row(
-        children: [
-          Row(
-            children: [
-              Image.asset(
-                'assets/images/Logo.png',
-                height: 40,
-              ),
-              const SizedBox(
-                width: 4,
-              ),
-              Text(
-                'Book Store',
-                style: TextTheme().displayLarge,
-              )
-            ],
-          ),
-          Spacer(),
-          IconButton(
-              onPressed: () {},
-              icon: PhosphorIcon(
-                PhosphorIcons.bold.magnifyingGlass,
-                size: 27,
-              )),
-        ],
-      ),
-    );
-  }
-}
 
-class CustomListViewItem extends StatelessWidget {
-  const CustomListViewItem({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 131,
-      height: MediaQuery.of(context).size.height * .25,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/images/BookCover.png'))),
-    );
-  }
-}
