@@ -1,6 +1,5 @@
-import 'package:bookapp/features/home/presentation/views/homeView.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -47,7 +46,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     );
   }
     void NavgateToHome() {
-    Future.delayed(Duration(seconds: 3),()=>Get.to(HomeView(),transition: Transition.rightToLeft,duration: Duration(seconds: 1)));
+    Future.delayed(Duration(seconds: 3),()=>context.go('/home'));
   }
   void initSlidingAnimation() {
     animationController =
