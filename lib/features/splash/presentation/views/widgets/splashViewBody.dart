@@ -47,9 +47,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     );
   }
     void NavgateToHome() {
-    Future.delayed(Duration(seconds: 3),()=>Get.to(()=>HomeView(),
-    transition: Transition.rightToLeft,
-    duration: Duration(seconds: 2)));
+    Future.delayed(Duration(seconds: 3),()=>Get.to(HomeView(),transition: Transition.rightToLeft,duration: Duration(seconds: 1)));
   }
   void initSlidingAnimation() {
     animationController =
