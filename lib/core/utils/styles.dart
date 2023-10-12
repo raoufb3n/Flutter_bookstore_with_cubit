@@ -28,7 +28,7 @@ abstract class Styles {
   );
   static const buttonText = TextStyle(
     fontFamily: 'Poppins',
-    fontSize: 16,
-    fontWeight: FontWeight.w400,
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
   );
 }
