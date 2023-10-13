@@ -1,3 +1,4 @@
+import 'package:bookapp/features/Search/Presentation/views/SearchView.dart';
 import 'package:bookapp/features/home/presentation/views/bookDeatailsView.dart';
 import 'package:bookapp/features/home/presentation/views/homeView.dart';
 import 'package:bookapp/features/splash/presentation/views/SplashView.dart';
@@ -44,6 +45,12 @@ final GoRouter _router = GoRouter(
         builder: (context, state) {
           return BookDetailsView();
         },
-        ),        
+        ),   
+            GoRoute(
+        path: '/search',
+        builder: (context, state) {
+          return SearchView();
+        },
+        ),       
   ],
 );
