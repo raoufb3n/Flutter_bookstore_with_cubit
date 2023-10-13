@@ -1,6 +1,6 @@
 import 'package:bookapp/core/utils/styles.dart';
 import 'package:bookapp/features/Search/Presentation/views/widgets/CostumSearchTextFieald.dart';
-import 'package:bookapp/features/home/presentation/views/widgets/newestListItem.dart';
+import 'package:bookapp/features/Search/Presentation/views/widgets/SearchResultListView.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
@@ -43,18 +43,5 @@ class SearchViewBody extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-class SearchResultListView extends StatelessWidget {
-  const SearchResultListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: 10,
-        itemBuilder: ((context, index) {
-          return const NewsetListItem();
-        }));
   }
 }

@@ -20,8 +20,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
     NavgateToHome();
   }
 
-
-
   @override
   void dispose() {
     // TODO: implement dispose
@@ -45,9 +43,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
       ],
     );
   }
-    void NavgateToHome() {
-    Future.delayed(Duration(seconds: 3),()=>context.go('/home'));
+
+  void NavgateToHome() {
+    Future.delayed(Duration(seconds: 3), () => context.go('/home'));
   }
+
   void initSlidingAnimation() {
     animationController =
         AnimationController(vsync: this, duration: Duration(seconds: 1));

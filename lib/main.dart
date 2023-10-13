@@ -29,28 +29,28 @@ class MyApp extends StatelessWidget {
 final GoRouter _router = GoRouter(
   routes: <RouteBase>[
     GoRoute(
-        path: '/',
-        builder: (BuildContext context, GoRouterState state) {
-          return const SplashView();
-        },
-        ),
+      path: '/',
+      builder: (BuildContext context, GoRouterState state) {
+        return const SplashView();
+      },
+    ),
     GoRoute(
-        path: '/home',
-        builder: (context, state) {
-          return HomeView();
-        },
-        ),
+      path: '/home',
+      builder: (context, state) {
+        return HomeView();
+      },
+    ),
     GoRoute(
-        path: '/details',
-        builder: (context, state) {
-          return BookDetailsView();
-        },
-        ),   
-            GoRoute(
-        path: '/search',
-        builder: (context, state) {
-          return SearchView();
-        },
-        ),       
+      path: '/details',
+      builder: (context, state) {
+        return BookDetailsView();
+      },
+    ),
+    GoRoute(
+      path: '/search',
+      builder: (context, state) {
+        return SearchView();
+      },
+    ),
   ],
 );

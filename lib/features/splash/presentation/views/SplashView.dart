@@ -1,6 +1,3 @@
-
-
-
 import 'package:bookapp/features/splash/presentation/views/widgets/splashViewBody.dart';
 import 'package:flutter/material.dart';
 

@@ -1,5 +1,3 @@
-
-
 import 'package:bookapp/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';

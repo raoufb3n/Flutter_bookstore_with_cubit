@@ -23,7 +23,7 @@ class CustomSearchTextFieald extends StatelessWidget {
           hintText: 'Search',
           hintStyle: Styles.labelText,
           suffixIcon: IconButton(
-            splashColor: Colors.white.withOpacity(0),
+              splashColor: Colors.white.withOpacity(0),
               onPressed: () {},
               icon: PhosphorIcon(
                 PhosphorIcons.bold.magnifyingGlass,
