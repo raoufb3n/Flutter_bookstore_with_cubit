@@ -19,22 +19,20 @@ class _HomeViewBodyState extends State<HomeViewBody> {
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
-
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CostumAppBar(),
-                  FeaturedBokksListView(),
-                  const SizedBox(
-                    height: 32,
-                  ),
-                  Text(
-                    'Newest:',
-                    style: Styles.displayLarge,
-                  ),
-                ],
-              ),
-            
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CostumAppBar(),
+                FeaturedBokksListView(),
+                const SizedBox(
+                  height: 32,
+                ),
+                Text(
+                  'Newest:',
+                  style: Styles.displayLarge,
+                ),
+              ],
+            ),
           ),
           SliverFillRemaining(
             child: NewestListView(),
