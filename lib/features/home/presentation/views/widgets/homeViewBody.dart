@@ -17,21 +17,25 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     return Padding(
       padding: const EdgeInsets.only(top: 30),
       child: CustomScrollView(
+        physics: BouncingScrollPhysics(),
         slivers: [
           SliverToBoxAdapter(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CostumAppBar(),
-                FeaturedBokksListView(),
-                const SizedBox(
-                  height: 32,
-                ),
-                Text(
-                  'Newest:',
-                  style: Styles.displayLarge,
-                ),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CostumAppBar(),
+                  FeaturedBokksListView(),
+                  const SizedBox(
+                    height: 32,
+                  ),
+                  Text(
+                    'Newest:',
+                    style: Styles.displayLarge,
+                  ),
+                ],
+              ),
             ),
           ),
           SliverFillRemaining(

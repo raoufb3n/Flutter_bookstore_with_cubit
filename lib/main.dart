@@ -1,4 +1,3 @@
-import 'package:bookapp/core/utils/apiService.dart';
 import 'package:bookapp/core/utils/serviceLocator.dart';
 import 'package:bookapp/features/Search/Presentation/views/SearchView.dart';
 import 'package:bookapp/features/home/data/repos/homeRepoImple.dart';
@@ -7,7 +6,6 @@ import 'package:bookapp/features/home/presentation/view_models/featuredBooksCubi
 import 'package:bookapp/features/home/presentation/views/bookDeatailsView.dart';
 import 'package:bookapp/features/home/presentation/views/homeView.dart';
 import 'package:bookapp/features/splash/presentation/views/SplashView.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,7 +23,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => NewestBooksCubitCubit(getIt.get<HomeRepoImpl>()),
+          create: (context) => NewestBooksCubitCubit(getIt.get<HomeRepoImpl>())..fetchNewestBooks(),
         ),
         BlocProvider(
           create: (context) => FeaturebooksCubit(getIt.get<HomeRepoImpl>())..fetchFeaturedBooks(),
