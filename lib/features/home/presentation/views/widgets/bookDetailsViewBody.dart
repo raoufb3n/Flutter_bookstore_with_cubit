@@ -22,7 +22,9 @@ class BookDeatailsViewBody extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * .2),
-          child: CustomListViewItem(),
+          child: CustomListViewItem(
+            url: 'https://store.nytimes.com/cdn/shop/files/special-linen-red_1024x1024.jpg?v=1687532718',
+          ),
         ),
         const SizedBox(
           height: 32,

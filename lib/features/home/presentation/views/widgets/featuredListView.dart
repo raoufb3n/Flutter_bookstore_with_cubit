@@ -17,10 +17,13 @@ class FeaturedBokksListView extends StatelessWidget {
               height: MediaQuery.of(context).size.height * .3,
               child: ListView.builder(
                   physics: BouncingScrollPhysics(),
+                  itemCount: state.books.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) => Padding(
                         padding: const EdgeInsets.only(right: 24),
-                        child: CustomListViewItem(),
+                        child: CustomListViewItem(
+                          url: state.books[index].volumeInfo!.imageLinks!.thumbnail!,
+                        ),
                       )));
         } else if (state is FeaturebooksFailure) {
           return CustomErrorWidget(errMessage: state.errMessage);

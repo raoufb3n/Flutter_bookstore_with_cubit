@@ -19,8 +19,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -35,7 +34,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   ),
                 ],
               ),
-            ),
+            
           ),
           SliverFillRemaining(
             child: NewestListView(),
