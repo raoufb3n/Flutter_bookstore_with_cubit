@@ -27,5 +27,17 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() {}
+  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async{
+        try {
+      var data = await apiService.get(
+          endPoint: 'volumes?q=programming&filter=free-ebooks');
+      List<BookModel> books = [];
+      for (var i in data['items']) {
+        books.add(BookModel.fromJson(i));
+      }
+      return right(books);
+    } catch (e) {
+      return left(ServerFailure());
+    }
+  }
 }
