@@ -1,5 +1,7 @@
+abstract class Failure {
+  final String errMessage = 'error';
+}
 
+class ServerFailure extends Failure {}
 
-abstract class Failure{}
-class ServerFailure extends Failure{}
-class NetworkFailure extends Failure{}
+class NetworkFailure extends Failure {}
