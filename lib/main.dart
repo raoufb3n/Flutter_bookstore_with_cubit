@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
           create: (context) => NewestBooksCubitCubit(getIt.get<HomeRepoImpl>()),
         ),
         BlocProvider(
-          create: (context) => FeaturebooksCubit(getIt.get<HomeRepoImpl>()),
+          create: (context) => FeaturebooksCubit(getIt.get<HomeRepoImpl>())..fetchFeaturedBooks(),
         ),
       ],
       child: MaterialApp.router(
@@ -36,8 +36,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: Color(0xff202040),
-          primaryColor: Color(0xffB030B0),
-          primaryColorDark: Color(0xff202060),
         ),
       ),
     );
