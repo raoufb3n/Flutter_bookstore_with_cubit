@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:bookapp/core/errors/errors.dart';
 import 'package:bookapp/features/home/data/models/book_model/book_model.dart';
 import 'package:bookapp/features/home/data/repos/homeRepo.dart';
 import 'package:equatable/equatable.dart';
