@@ -59,9 +59,9 @@ class BookDeatailsViewBody extends StatelessWidget {
           height: 16,
         ),
         Container(
-            alignment: Alignment.center,
+            alignment: Alignment.topCenter,
             width: 319,
-            height: 80,
+            height: 85,
             child: Text(
               book.volumeInfo!.description ??
                   'There is no description for this book',
@@ -78,9 +78,11 @@ class BookDeatailsViewBody extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               DeatilsCta(
+                bbok: book,
                   labelText: 'Preview', icon: PhosphorIcons.fill.alignLeft),
               const Spacer(),
               DeatilsCta(
+                bbok: book,
                   labelText: 'Reviews',
                   icon: PhosphorIcons.bold.chatTeardropDots)
             ],

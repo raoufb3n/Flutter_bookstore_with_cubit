@@ -39,7 +39,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             ),
           ),
           SliverFillRemaining(
-            child: NewestListView(),
+            child:  NewestListView(),
           )
         ],
       ),

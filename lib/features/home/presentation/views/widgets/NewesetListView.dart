@@ -14,6 +14,7 @@ class NewestListView extends StatelessWidget {
       builder: (context, state) {
         if (state is NewestBooksCubitSuccess) {
           return ListView.builder(
+              shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemCount: state.books.length,
               itemBuilder: ((context, index) {
