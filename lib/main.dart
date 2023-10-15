@@ -1,5 +1,6 @@
 import 'package:bookapp/core/utils/serviceLocator.dart';
 import 'package:bookapp/features/Search/Presentation/views/SearchView.dart';
+import 'package:bookapp/features/home/data/models/book_model/book_model.dart';
 import 'package:bookapp/features/home/data/repos/homeRepoImple.dart';
 import 'package:bookapp/features/home/presentation/view_models/NewestBooksCubit/newest_books_cubit_cubit.dart';
 import 'package:bookapp/features/home/presentation/view_models/featuredBooksCubit/featurebooks_cubit.dart';
@@ -57,7 +58,7 @@ final GoRouter _router = GoRouter(
     GoRoute(
       path: '/details',
       builder: (context, state) {
-        return BookDetailsView();
+        return BookDetailsView(book: state.extra as BookModel,);
       },
     ),
     GoRoute(

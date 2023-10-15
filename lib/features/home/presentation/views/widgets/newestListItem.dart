@@ -14,7 +14,7 @@ class NewsetListItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: GestureDetector(
         onTap: () {
-          GoRouter.of(context).push('/details');
+          GoRouter.of(context).push('/details',extra: bookModel);
         },
         child: SizedBox(
           child: Row(
@@ -70,7 +70,7 @@ class NewsetListItem extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      ...List.generate(5, (index) {
+                      ...List.generate(bookModel.volumeInfo!.averageRating ?? 3, (index) {
                         return PhosphorIcon(
                           PhosphorIcons.fill.star,
                           color: Color(0xffFFC41F),

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class RatingWidget extends StatelessWidget {
-  const RatingWidget({super.key});
-
+  const RatingWidget({super.key, required this.rating});
+  final int rating;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,18 +13,21 @@ class RatingWidget extends StatelessWidget {
       height: 23,
       child: Row(
         children: [
-          ...List.generate(
-              5,
-              (index) => PhosphorIcon(
-                    PhosphorIcons.fill.star,
-                    color: Color(0xffFFC41F),
-                    size: 16,
-                  )),
+
+             ...List.generate(
+                  rating,
+                  (index) => PhosphorIcon(
+                        PhosphorIcons.fill.star,
+                        color: Color(0xffFFC41F),
+                        size: 16,
+                      )),
+
+          
           const Spacer(),
           Row(
             children: [
               Text(
-                '5.0',
+                '$rating',
                 style: Styles.bodyMeduim,
               ),
               Text(

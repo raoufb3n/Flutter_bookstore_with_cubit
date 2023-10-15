@@ -1,4 +1,5 @@
 import 'package:bookapp/core/utils/styles.dart';
+import 'package:bookapp/features/home/data/models/book_model/book_model.dart';
 import 'package:bookapp/features/home/presentation/views/widgets/costumListViewItem.dart';
 import 'package:bookapp/features/home/presentation/views/widgets/customBookDetailsAppBar.dart';
 import 'package:bookapp/features/home/presentation/views/widgets/customButton.dart';
@@ -8,49 +9,62 @@ import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class BookDeatailsViewBody extends StatelessWidget {
-  const BookDeatailsViewBody({super.key});
-
+  BookDeatailsViewBody({super.key, required this.book});
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         CustomDeatilsAppBar(),
-        const SizedBox(
-          height: 16,
-        ),
         Padding(
           padding: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * .2),
           child: CustomListViewItem(
-            url: 'https://store.nytimes.com/cdn/shop/files/special-linen-red_1024x1024.jpg?v=1687532718',
+            url: book.volumeInfo!.imageLinks!.thumbnail!,
           ),
         ),
         const SizedBox(
-          height: 32,
+          height: 24,
         ),
-        Text(
-          'Yves Saint Laurent',
-          style: Styles.displayLarge,
-        ),
-        const SizedBox(
-          height: 12,
-        ),
-        Text(
-          'Suzy Menkes',
-          style: Styles.bodyLarge.copyWith(color: Colors.grey),
+        SizedBox(
+          height: 70,
+          width: MediaQuery.of(context).size.width * .8,
+          child: Text(
+            book.volumeInfo!.title!,
+            style: Styles.displayMeduim.copyWith(fontSize: 21),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.center,
+          ),
         ),
         const SizedBox(
           height: 8,
         ),
-        RatingWidget(),
+        SizedBox(
+          height: 20,
+          child: Text(
+            book.volumeInfo!.authors?[0] ?? 'Author',
+            textAlign: TextAlign.center,
+            style: Styles.bodyLarge.copyWith(color: Colors.grey),
+          ),
+        ),
+        const SizedBox(
+          height: 8,
+        ),
+        RatingWidget(
+          rating: book.volumeInfo!.averageRating ?? 5,
+        ),
         const SizedBox(
           height: 16,
         ),
         Container(
+            alignment: Alignment.center,
             width: 319,
+            height: 80,
             child: Text(
-              'A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion.',
+              book.volumeInfo!.description ??
+                  'There is no description for this book',
               style: Styles.bodyMeduim.copyWith(color: Colors.grey),
               maxLines: 4,
               overflow: TextOverflow.ellipsis,
@@ -73,7 +87,7 @@ class BookDeatailsViewBody extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 24,
+          height: 16,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
