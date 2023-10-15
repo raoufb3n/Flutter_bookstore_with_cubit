@@ -1,3 +1,4 @@
+import 'package:bookapp/core/functions/lunch_urls.dart';
 import 'package:bookapp/core/utils/styles.dart';
 import 'package:bookapp/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
@@ -18,11 +19,8 @@ class DeatilsCta extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async {
-        Uri _url = Uri.parse(bbok.volumeInfo!.previewLink!);
-
-        if (await canLaunchUrl(_url)) {
-          await launchUrl(_url);
-        }
+       
+        lunchCustomUrl(context, bbok.volumeInfo!.previewLink!);
       },
       child: Container(
         alignment: Alignment.center,
