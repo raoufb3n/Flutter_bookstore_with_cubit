@@ -9,20 +9,17 @@ class RatingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      width: 145,
+      width: 125,
       height: 23,
       child: Row(
         children: [
-
-             ...List.generate(
-                  rating,
-                  (index) => PhosphorIcon(
-                        PhosphorIcons.fill.star,
-                        color: Color(0xffFFC41F),
-                        size: 16,
-                      )),
-
-          
+          ...List.generate(
+              rating,
+              (index) => PhosphorIcon(
+                    PhosphorIcons.fill.star,
+                    color: Color(0xffFFC41F),
+                    size: 16,
+                  )),
           const Spacer(),
           Row(
             children: [

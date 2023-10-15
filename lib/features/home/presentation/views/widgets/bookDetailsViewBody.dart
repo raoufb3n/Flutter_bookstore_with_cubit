@@ -53,7 +53,7 @@ class BookDeatailsViewBody extends StatelessWidget {
           height: 8,
         ),
         RatingWidget(
-          rating: book.volumeInfo!.averageRating ?? 5,
+          rating: book.volumeInfo!.averageRating ?? 3,
         ),
         const SizedBox(
           height: 16,
