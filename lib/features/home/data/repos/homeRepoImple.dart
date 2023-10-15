@@ -5,6 +5,7 @@ import 'package:bookapp/core/errors/errors.dart';
 import 'package:bookapp/core/utils/apiService.dart';
 import 'package:bookapp/features/home/data/models/book_model/book_model.dart';
 import 'package:bookapp/features/home/data/repos/homeRepo.dart';
+import 'package:dio/dio.dart';
 
 class HomeRepoImpl implements HomeRepo {
   final ApiService apiService;
@@ -22,13 +23,18 @@ class HomeRepoImpl implements HomeRepo {
       }
       return right(books);
     } catch (e) {
-      return left(ServerFailure());
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      }else{
+        return left(ServerFailure(e.toString()));
+      }
+      
     }
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async{
-        try {
+  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
+    try {
       var data = await apiService.get(
           endPoint: 'volumes?q=programming&filter=free-ebooks');
       List<BookModel> books = [];
@@ -37,7 +43,12 @@ class HomeRepoImpl implements HomeRepo {
       }
       return right(books);
     } catch (e) {
-      return left(ServerFailure());
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      }else{
+        return left(ServerFailure(e.toString()));
+      }
+      
     }
   }
 }
