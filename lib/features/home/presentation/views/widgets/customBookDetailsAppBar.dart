@@ -19,13 +19,7 @@ class CustomDeatilsAppBar extends StatelessWidget {
                 PhosphorIcons.bold.caretLeft,
                 size: 24,
               )),
-          const Spacer(),
-          IconButton(
-              onPressed: () {},
-              icon: PhosphorIcon(
-                PhosphorIcons.bold.shoppingCartSimple,
-                size: 24,
-              )),
+
         ],
       ),
     );

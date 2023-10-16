@@ -1,8 +1,6 @@
 import 'package:bookapp/core/utils/styles.dart';
-import 'package:bookapp/core/widgets/CustomLoadingIndicator.dart';
 import 'package:bookapp/core/widgets/customError.dart';
 import 'package:bookapp/features/Search/Presentation/view_model/cubit/search_books_cubit.dart';
-import 'package:bookapp/features/home/data/models/book_model/book_model.dart';
 import 'package:bookapp/features/home/presentation/views/widgets/newestListItem.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
