@@ -3,7 +3,6 @@ import 'package:bookapp/core/utils/styles.dart';
 import 'package:bookapp/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class DeatilsCta extends StatelessWidget {
   DeatilsCta(

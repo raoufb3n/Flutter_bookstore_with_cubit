@@ -1,13 +1,18 @@
 import 'package:bookapp/core/utils/styles.dart';
+import 'package:bookapp/features/Search/Presentation/view_model/cubit/search_books_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class CustomSearchTextFieald extends StatelessWidget {
-  const CustomSearchTextFieald({super.key});
-
+  CustomSearchTextFieald({super.key});
+  String? prompt;
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onChanged: (value) {
+        prompt = value;
+      },
       decoration: InputDecoration(
           suffixIconColor: Colors.white,
           focusColor: Color(0xffB030B0),
@@ -24,7 +29,13 @@ class CustomSearchTextFieald extends StatelessWidget {
           hintStyle: Styles.labelText,
           suffixIcon: IconButton(
               splashColor: Colors.white.withOpacity(0),
-              onPressed: () {},
+              onPressed: () async {
+                if (prompt != null) {
+                                  await BlocProvider.of<SearchBooksCubit>(context)
+                    .fetchFeaturedBooks(prompt!);
+                }
+
+              },
               icon: PhosphorIcon(
                 PhosphorIcons.bold.magnifyingGlass,
                 size: 24,
